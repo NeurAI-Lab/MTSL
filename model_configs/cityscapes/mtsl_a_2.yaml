@@ -1,0 +1,24 @@
+DATALOADER: {SIZE_DIVISIBILITY: 64}
+MODEL:
+  NAME: mtsl_arch
+  BACKBONE_NAME: resnet18
+  ENCODER: {NUM_EN_FEATURES: 5}
+MISC: {MODELS_TO_KEEP: 1, SAVE_TASK_BEST: true}
+DICT_CONFIG:
+  TASKS_DICT: {segment: true, depth: true, sem_cont: true, sur_nor: true, ae: true}
+  LOSS_INIT_WEIGHTS: {segment_loss: 1.0, depth_loss: 1.0, sem_cont_loss: 1.0, sur_nor_loss: 1.0,
+    ae_reconst_loss: 1.0}
+  BRANCHING_INFO:
+    base_stem:
+      stage_range: [-1, -1]
+      branches: [segment|depth|sem_cont|sur_nor|ae]
+    segment|depth|sem_cont|sur_nor|ae:
+      stage_range: [0, 5]
+      branches: [segment|sem_cont, depth|sur_nor|ae]
+    segment|sem_cont:
+      stage_range: [6, 9]
+      branches: [segment, sem_cont]
+    depth|sur_nor|ae:
+      stage_range: [6, 7]
+      branches: [depth, sur_nor, ae]
+  EXPLAINER_ARGS: {min_similarity: 0.95, max_images: 800}

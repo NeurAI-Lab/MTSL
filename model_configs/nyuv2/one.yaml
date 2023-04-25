@@ -1,0 +1,34 @@
+DATALOADER:
+  SIZE_DIVISIBILITY: 64
+  
+MODEL:
+  NAME: mtsl_arch
+  BACKBONE_NAME: resnet18
+
+  ENCODER:
+    NUM_EN_FEATURES: 5
+    
+  DEPTH:
+    ACTIVATION_FN: 'relu'
+
+MISC:
+  MODELS_TO_KEEP: 1
+  SAVE_TASK_BEST: True
+
+DICT_CONFIG:
+  TASKS_DICT: 
+    segment: True
+    depth: True
+    sem_cont: True
+    sur_nor: True
+    ae: True
+  LOSS_INIT_WEIGHTS:
+    segment_loss: 1.
+    depth_loss: 1.
+    sem_cont_loss: 1.
+    sur_nor_loss: 1.
+    ae_reconst_loss: 1.
+  BRANCHING_INFO:
+    one:
+      stage_range: [0, 9]
+      branches: [segment, depth, sem_cont, sur_nor, ae]
