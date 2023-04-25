@@ -1,3 +1,5 @@
+# Multi-Task Structural Learning using Local Task Similarity induced Neuron Creation and Removal
+
 OUTPUT_DIR: Directory to save output contents.<br />
 DATA_DIR: Directory containing the datasets.<br />
 MODEL_DIR: Directory containing the trained models.
