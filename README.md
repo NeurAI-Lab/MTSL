@@ -1,6 +1,6 @@
 # MTSL
 
-This is the official repository of the ICML, 2023 paper "[Multi-Task Structural Learning using Local Task Similarity induced Neuron Creation and Removal](https://arxiv.org/abs/2305.00441)" by [Naresh Kumar Gurulingan](https://scholar.google.com/citations?user=6XoXurUAAAAJ&hl=en), [Bahram Zonooz](https://scholar.google.com/citations?hl=en&user=FZmIlY8AAAAJ) and [Elahe Arani](https://www.linkedin.com/in/elahe-arani-630870b2/).
+This is the official repository of the ICML, 2023 paper "[Multi-Task Structural Learning using Local Task Similarity induced Neuron Creation and Removal](https://arxiv.org/abs/2305.00441)" by [Naresh Kumar Gurulingan](https://scholar.google.com/citations?user=6XoXurUAAAAJ&hl=en), [Bahram Zonooz](https://scholar.google.com/citations?hl=en&user=FZmIlY8AAAAJ) and [Elahe Arani](https://scholar.google.com/citations?user=e_I_v6cAAAAJ&hl=en).
 
 ### Schematic of MTSL:
 ![image info](./images/mtsl.png)
